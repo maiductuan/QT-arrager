@@ -1,0 +1,25 @@
+<div class="content-wrapper">
+<div class="col-sm-6 offset-sm-3" style="padding: 30px;">
+    <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Update phòng ban</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form" name="frmsv">
+          <div class="card-body">
+            <div class="form-group" ng-repeat="p_id in phongbanId">
+              <label for="exampleInputEmail1">Tên phòng ban</label> 
+              <input type="text" class="form-control" required value="{{p_id.name_phongban}}">
+            </div>
+            
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary" ng-click="update_phongban()">update</button>
+          </div>
+        </form>
+    </div>
+  </div>
+  </div>
+  

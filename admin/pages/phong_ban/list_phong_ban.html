@@ -1,0 +1,34 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" >
+    <div class="card" >
+        <div class="card-header">DANH SÁCH PHÒNG BAN</div>
+            <input class="form-control form-control-navbar" type='text' style="width: 200px;margin: 5px;border-right-width:1px;" ng-model='searchText' placeholder="Tìm kiếm" />
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th><a href="" ng-click="sortBy('name_phongban')">Phòng ban</a></th>
+                        <th><a href="" ng-click="sortBy('created_at')">Ngày tạo</a></th>
+                        <th style="width: 100px;">Chức năng</th>
+                    </tr>
+                    <tr ng-repeat="p in list_phongban|orderBy:prop|limitTo:8:begin| filter:searchText" >
+                        <td>{{p.name_phongban|uppercase}}</td>
+                        <td>{{p.created_at|date:"MMMM-dd,yyyy"}}</td>
+                        <td>
+                              <a href="#!update-phongban/{{p.id_phongban}}" ><span class="fa fa-edit"></span></a>|
+                              <a href="#!update-phongban/{{p.id_phongban}}" ><span class="fa fa-minus-circle"></span></a>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    <div class="card-footer text-center">
+        <button class="btn btn-primary" ng-click="first()"><<</button>
+        <button class="btn btn-primary" ng-click="prev()">Trởi về</button>
+        <button class="btn btn-primary" ng-click="next()">tiếp theo</button>
+        <button class="btn btn-primary" ng-click="last()">>></button>
+    </div>
+    <!-- /.card -->
+    
+  </div>
+  <!-- /.content-wrapper -->
+  

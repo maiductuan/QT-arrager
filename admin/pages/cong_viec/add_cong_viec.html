@@ -1,0 +1,54 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <div class="col-sm-6 offset-sm-3" style="padding: 30px;">
+        <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Thêm  công việc</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form" name="frmsv">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tên công việc</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" ng-model="name" required placeholder="Công việc" name="txtname">
+                  <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtname.$invalid" class="alert alert-danger">Tên phòng ban không được bỏ trống</label>
+                </div>
+                <div class="form-group">
+                    <label>Phòng ban</label>
+                    <select class="form-control select2" style="width: 100%;" ng-model="phongban" required name="txtphongban">
+                      <option selected="selected">Arrager</option>
+                      <option>Phòng marketing</option>
+                    </select>
+                    <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtphongban.$invalid" class="alert alert-danger">Hãy chọn 1 phòng ban</label>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả công việc</label>
+                    <textarea class="form-control" rows="3"  ng-model="decs" required name="txtdecs" minlength="20" placeholder="mô tả ..."></textarea>
+                    <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtdecs.$invalid" class="alert alert-danger">Hãy nhập mô tả</label>
+                    <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtdecs.$invalid" class="alert alert-danger">Mô tả phải dài hơn 20 ký tự</label>
+                  </div>
+                <div class="form-group">
+                    <label>Ngày thực hiện:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="date" class="form-control" data-inputmask-alias="datetime"  ng-model="date" data-inputmask-inputformat="dd/mm/yyyy" data-mask placeholder="dd/mm/yyyy" required name="txtdate">
+                      <label style="background: none;color: red;border: none;font-family: serif;width: 100%;" ng-show="frmsv.txtdate.$invalid" class="alert alert-danger">chưa chọn ngày thực hiện</label>
+                    </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary"  ng-click="add_congivec()">Thêm</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.content-wrapper -->
+  

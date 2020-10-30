@@ -1,0 +1,40 @@
+<div class="content-wrapper">
+<div class="col-sm-6 offset-sm-3" style="padding: 30px;">
+    <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Thêm thông báo</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form" name="frmsv">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Tên thông báo</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" ng-model="name" required placeholder="Enter thông báo" name="txtname">
+              <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtname.$invalid" class="alert alert-danger">Tên phòng ban không được bỏ trống</label>
+            </div>
+            <div class="form-group">
+                <label>Phòng ban</label>
+                <select class="form-cont rol select2" style="width: 100%;" ng-model="phongban" required name="txtphongban">
+                  <option selected="selected">All</option>
+                  <option selected="selected">Arrager</option>
+                  <option>Phòng marketing</option>
+                </select>
+                <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtphongban.$invalid" class="alert alert-danger">Hãy chọn 1 phòng ban</label>
+            </div>
+            <div class="form-group">
+                <label>Nội dung thông báo</label>
+                <textarea class="form-control" rows="3" placeholder="mô tả ..." required minlength="20" ng-model="decs" name="txtdecs"></textarea>
+                <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtdecs.$invalid" class="alert alert-danger">Hãy nhập mô tả</label>
+                <label style="background: none;color: red;border: none;font-family: serif;" ng-show="frmsv.txtdecs.$invalid" class="alert alert-danger">Mô tả phải dài hơn 20 ký tự</label>
+            </div>
+          </div>
+          <!-- /.card-body -->
+  
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary" ng-click="add_thongbao()">Thêm</button>
+          </div>
+        </form>
+    </div>
+  </div>
+  </div>
